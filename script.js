@@ -62,28 +62,3 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true
     });
-// form validation  
-   document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById("fullName").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const response = document.getElementById("formResponse");
-
-  if (!name || !email || !message) {
-    response.textContent = "Please fill out all required fields.";
-    response.style.color = "red";
-    return;
-  }
-
-  if (!email.includes("@") || !email.includes(".")) {
-    response.textContent = "Enter a valid email address.";
-    response.style.color = "red";
-    return;
-  }
-
-  response.textContent = "Message sent successfully!";
-  response.style.color = "green";
-  this.reset();
-});
